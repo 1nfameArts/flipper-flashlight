@@ -57,9 +57,11 @@ static void flash_toggle(PluginState* const plugin_state) {
 
     if(plugin_state->is_on) {
         furi_hal_gpio_write(&gpio_ext_pc3, false);
+        furi_hal_gpio_write(&gpio_ext_pc0, false);
         plugin_state->is_on = false;
     } else {
         furi_hal_gpio_write(&gpio_ext_pc3, true);
+        furi_hal_gpio_write(&gpio_ext_pc0, true);
         plugin_state->is_on = true;
     }
 }
